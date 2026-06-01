@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+.env
+.env.*
+!.env.example
+production-screenshots/
+local-data/
+*.log
+*.dump
+*.backup
+*.sql
+!.keep
+!database/migrations/*.sql
+coverage/
+.DS_Store

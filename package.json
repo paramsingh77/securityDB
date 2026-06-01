@@ -1,0 +1,20 @@
+{
+  "name": "hospital-security-portal",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "app.js",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace server",
+    "build": "npm run build --workspace client",
+    "start": "node app.js",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.60.0"
+  }
+}

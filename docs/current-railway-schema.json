@@ -1,0 +1,863 @@
+{
+  "capturedAt": "2026-05-27T18:58:04.373Z",
+  "tables": [
+    {
+      "table_schema": "public",
+      "table_name": "employees"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_drafts"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_images"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_drafts"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_images"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "notifications"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "users"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "visitors"
+    }
+  ],
+  "columns": [
+    {
+      "table_schema": "public",
+      "table_name": "employees",
+      "column_name": "id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('employees_id_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "employees",
+      "column_name": "name",
+      "data_type": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "employees",
+      "column_name": "email",
+      "data_type": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "employees",
+      "column_name": "password",
+      "data_type": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "employees",
+      "column_name": "role",
+      "data_type": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_drafts",
+      "column_name": "draft_id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('event_drafts_draft_id_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_drafts",
+      "column_name": "user_id",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_drafts",
+      "column_name": "event_data",
+      "data_type": "jsonb",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_drafts",
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_drafts",
+      "column_name": "updated_at",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_images",
+      "column_name": "id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('event_images_id_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_images",
+      "column_name": "event_id",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_images",
+      "column_name": "image_url",
+      "data_type": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "event_images",
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events",
+      "column_name": "id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('events_id_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events",
+      "column_name": "date_time",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events",
+      "column_name": "user_id",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events",
+      "column_name": "zone",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events",
+      "column_name": "category",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events",
+      "column_name": "narrative",
+      "data_type": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events",
+      "column_name": "status",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": "'Active'::character varying"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events",
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events",
+      "column_name": "event_number",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('events_event_number_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "events",
+      "column_name": "assigned_to",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_drafts",
+      "column_name": "draft_id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('incident_drafts_draft_id_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_drafts",
+      "column_name": "user_id",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_drafts",
+      "column_name": "incident_data",
+      "data_type": "jsonb",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_drafts",
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_drafts",
+      "column_name": "updated_at",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_images",
+      "column_name": "image_id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('incident_images_image_id_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_images",
+      "column_name": "incident_id",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_images",
+      "column_name": "image_url",
+      "data_type": "character varying",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incident_images",
+      "column_name": "uploaded_at",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "incident_id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('incidents_incident_id_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "incident_number",
+      "data_type": "character varying",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "reporting_officer_id",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "status",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": "'Pending Review'::character varying"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "approval_status",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": "'Pending'::character varying"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "approved_by",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "approval_date",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "approval_notes",
+      "data_type": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "location",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "sub_site",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "zone",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "room_street",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "building",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "floor",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "department",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "area_type",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "severity_level",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "narrative",
+      "data_type": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "primary_category",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "additional_categories",
+      "data_type": "ARRAY",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "is_confidential",
+      "data_type": "boolean",
+      "is_nullable": "YES",
+      "column_default": "false"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "incident_date",
+      "data_type": "date",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "incident_time",
+      "data_type": "time without time zone",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "reporting_phone",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "officer_post",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "shift_supervisor",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "area_secured",
+      "data_type": "boolean",
+      "is_nullable": "YES",
+      "column_default": "false"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "incidents",
+      "column_name": "officer_at_location",
+      "data_type": "boolean",
+      "is_nullable": "YES",
+      "column_default": "false"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "notifications",
+      "column_name": "notification_id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('notifications_notification_id_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "notifications",
+      "column_name": "user_id",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "notifications",
+      "column_name": "incident_id",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "notifications",
+      "column_name": "type",
+      "data_type": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "notifications",
+      "column_name": "message",
+      "data_type": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "notifications",
+      "column_name": "created_at",
+      "data_type": "date",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "notifications",
+      "column_name": "is_read",
+      "data_type": "boolean",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "users",
+      "column_name": "id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('users_id_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "users",
+      "column_name": "email",
+      "data_type": "character varying",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "users",
+      "column_name": "password",
+      "data_type": "character varying",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "users",
+      "column_name": "first_name",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "users",
+      "column_name": "last_name",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "users",
+      "column_name": "role",
+      "data_type": "character varying",
+      "is_nullable": "YES",
+      "column_default": "'user'::character varying"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "users",
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "users",
+      "column_name": "employee_id",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "visitors",
+      "column_name": "visitor_id",
+      "data_type": "integer",
+      "is_nullable": "NO",
+      "column_default": "nextval('visitors_visitor_id_seq'::regclass)"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "visitors",
+      "column_name": "first_name",
+      "data_type": "character varying",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "visitors",
+      "column_name": "last_name",
+      "data_type": "character varying",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "visitors",
+      "column_name": "check_in_time",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "visitors",
+      "column_name": "check_out_time",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "visitors",
+      "column_name": "status",
+      "data_type": "character varying",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "visitors",
+      "column_name": "valid_until",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_schema": "public",
+      "table_name": "visitors",
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone",
+      "is_nullable": "YES",
+      "column_default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_schema": "public",
+      "table_name": "visitors",
+      "column_name": "room_number",
+      "data_type": "integer",
+      "is_nullable": "YES",
+      "column_default": null
+    }
+  ],
+  "indexes": [
+    {
+      "schemaname": "public",
+      "tablename": "employees",
+      "indexname": "employees_email_key",
+      "indexdef": "CREATE UNIQUE INDEX employees_email_key ON public.employees USING btree (email)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "employees",
+      "indexname": "employees_pkey",
+      "indexdef": "CREATE UNIQUE INDEX employees_pkey ON public.employees USING btree (id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "event_drafts",
+      "indexname": "event_drafts_pkey",
+      "indexdef": "CREATE UNIQUE INDEX event_drafts_pkey ON public.event_drafts USING btree (draft_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "event_images",
+      "indexname": "event_images_pkey",
+      "indexdef": "CREATE UNIQUE INDEX event_images_pkey ON public.event_images USING btree (id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "event_images",
+      "indexname": "idx_event_images_event",
+      "indexdef": "CREATE INDEX idx_event_images_event ON public.event_images USING btree (event_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "events",
+      "indexname": "events_event_number_key",
+      "indexdef": "CREATE UNIQUE INDEX events_event_number_key ON public.events USING btree (event_number)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "events",
+      "indexname": "events_pkey",
+      "indexdef": "CREATE UNIQUE INDEX events_pkey ON public.events USING btree (id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "events",
+      "indexname": "idx_events_date",
+      "indexdef": "CREATE INDEX idx_events_date ON public.events USING btree (date_time)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "events",
+      "indexname": "idx_events_event_number",
+      "indexdef": "CREATE INDEX idx_events_event_number ON public.events USING btree (event_number)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "events",
+      "indexname": "idx_events_status",
+      "indexdef": "CREATE INDEX idx_events_status ON public.events USING btree (status)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "events",
+      "indexname": "idx_events_user",
+      "indexdef": "CREATE INDEX idx_events_user ON public.events USING btree (user_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "incident_drafts",
+      "indexname": "incident_drafts_pkey",
+      "indexdef": "CREATE UNIQUE INDEX incident_drafts_pkey ON public.incident_drafts USING btree (draft_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "incident_images",
+      "indexname": "incident_images_pkey",
+      "indexdef": "CREATE UNIQUE INDEX incident_images_pkey ON public.incident_images USING btree (image_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "incidents",
+      "indexname": "incidents_incident_number_key",
+      "indexdef": "CREATE UNIQUE INDEX incidents_incident_number_key ON public.incidents USING btree (incident_number)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "incidents",
+      "indexname": "incidents_pkey",
+      "indexdef": "CREATE UNIQUE INDEX incidents_pkey ON public.incidents USING btree (incident_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "notifications",
+      "indexname": "notifications_pkey",
+      "indexdef": "CREATE UNIQUE INDEX notifications_pkey ON public.notifications USING btree (notification_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "users",
+      "indexname": "users_email_key",
+      "indexdef": "CREATE UNIQUE INDEX users_email_key ON public.users USING btree (email)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "users",
+      "indexname": "users_employee_id_key",
+      "indexdef": "CREATE UNIQUE INDEX users_employee_id_key ON public.users USING btree (employee_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "users",
+      "indexname": "users_pkey",
+      "indexdef": "CREATE UNIQUE INDEX users_pkey ON public.users USING btree (id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "visitors",
+      "indexname": "idx_visitors_status",
+      "indexdef": "CREATE INDEX idx_visitors_status ON public.visitors USING btree (status)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "visitors",
+      "indexname": "visitors_pkey",
+      "indexdef": "CREATE UNIQUE INDEX visitors_pkey ON public.visitors USING btree (visitor_id)"
+    }
+  ]
+}
